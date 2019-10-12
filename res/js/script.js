@@ -43,4 +43,8 @@ $(document).ready(() => {
         $("#profile-button").removeClass("active");
         $("#courses-button").addClass("active");
     });
+
+    $("#add-course-button").click(() => {
+        $("#add-course").hasClass("hidden") ? $("#add-course").removeClass("hidden") : $("#add-course").addClass("hidden");
+    });
 });

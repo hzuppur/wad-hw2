@@ -162,6 +162,6 @@ table td{
     padding: 10px 20px;
     min-width: 135px;
 }
-#add-course{
+#add-course.hidden{
     display: none;
 }
