@@ -1,22 +1,27 @@
 var courses = [
     new Course("Algorithms and data structures", 3, 89),
     new Course("Web application development", 3, 40),
-    new Course("Probability theory", 2, 70),
-    new Course("Object oriented programming", 2, 95)
+    new Course("Object oriented programming", 2, 95),
+    new Course("Underwater Basket Weaving", 3, 19)
 ];
 
 var width = $(window).width();
 var duration = 200;
+var courses_count = 0;
+
+function add_course_to_page(c){
+    courses_count++;
+    $("#course-list").append(`<tr>
+                            <td>${courses_count}</td>
+                            <td>${c.title}</td>
+                            <td>${c.semester}</td>
+                            <td>${c.grade}</td>
+                        </tr>`);
+}
 
 $(document).ready(() => {
-    courses.forEach((course, i) => {
-        $("#course-list").append(`<tr>
-                            <td>${i + 1}</td>
-                            <td>${course.title}</td>
-                            <td>${course.semester}</td>
-                            <td>${course.grade}</td>
-                        </tr>`);
-    })
+    courses.map(c => add_course_to_page(c));
+
     $("#courses-container").css("margin-left", -width).css("margin-right", width);
 
     $("#profile-button").click(() => {
@@ -55,4 +60,7 @@ $(document).ready(() => {
     $("#add-course-button").click(() => {
         $("#add-course").hasClass("hidden") ? $("#add-course").removeClass("hidden") : $("#add-course").addClass("hidden");
     });
+    $("#save-course").click(() => {
+        add_course_to_page(new Course($("#title").val(), $("#semester").val(), $("#grade").val()))
+    })
 });
