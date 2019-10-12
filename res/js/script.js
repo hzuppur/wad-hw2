@@ -9,6 +9,14 @@ var width = $(window).width();
 var duration = 200;
 
 $(document).ready(() => {
+    courses.forEach((course, i) => {
+        $("#course-list").append(`<tr>
+                            <td>${i + 1}</td>
+                            <td>${course.title}</td>
+                            <td>${course.semester}</td>
+                            <td>${course.grade}</td>
+                        </tr>`);
+    })
     $("#courses-container").css("margin-left", -width).css("margin-right", width);
 
     $("#profile-button").click(() => {
