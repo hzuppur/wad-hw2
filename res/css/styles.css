@@ -121,19 +121,20 @@ table td{
 .content .tab.active{
     display: block;
 }
+
 .controls .pill{
     border: 1px solid #cbcbcb;
     background-color: #eaeaea;
     padding: 10px;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top: none;
-    margin-top: -1px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom: none;
+    margin-bottom: -1px;
     outline: none !important;
 }
 .controls .pill.active{
     background-color: #ffffff;
-    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
 }
 .controls .pill:hover{
     cursor: pointer;
