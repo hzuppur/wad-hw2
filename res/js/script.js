@@ -24,7 +24,7 @@ $(document).ready(() => {
     ];
     guy.add_courses(courses);
     courses.map(c => add_course_to_page(c));
-    $("#gpa > strong").text(`${guy.gpa}`);
+    $("#gpa").html(`<strong>${guy.gpa}</strong>`);
     $("#name").text(`${guy.firstname} ${guy.lastname}`);
     $("#birthdate").text(guy.birthdate);
     $("#faculty").text(guy.faculty);
@@ -73,7 +73,7 @@ $(document).ready(() => {
         c = new Course($("#title").val(), $("#semester").val(), parseInt($("#grade").val()));
         guy.add_courses([c]);
         add_course_to_page(c);
-        $("#gpa").text(guy.gpa);
+        $("#gpa").html(`<strong>${guy.gpa}</strong>`);
         $("#add-course > input").val("");
         $("#add-course").addClass("hidden");
     })
